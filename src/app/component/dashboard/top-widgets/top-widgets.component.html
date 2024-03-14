@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    @for (item of topedgit; track $index) {
+    <div class="col-lg-3 col-md-6 gy-2 p-2">
+      <div class="pb-1 w-100 d-flex justify-content-between align-items-start">
+        <div class="icon text-white rounded p-2 fs-3 d-flex align-items-center">
+          <span nz-icon nzType="{{ item.icon }}" nzTheme="outline"></span>
+        </div>
+        <div class="value">
+          <div class="lable">
+            {{ item.title }}
+            <div class="number mt-3 text-end">{{ item.value }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart">
+        <canvas
+          height="100px"
+          id="myChart"
+          baseChart
+          [datasets]="data"
+          [labels]="labels"
+          [options]="chartOptions"
+          type="line"
+        ></canvas>
+      </div>
+    </div>
+
+    }
+  </div>
+</div>
